@@ -1,5 +1,6 @@
 <?php
     include 'DecoupFiles/head.php';
+    include 'DecoupFiles/sideBar.php';
 ?>
 
 <body class="dash">
