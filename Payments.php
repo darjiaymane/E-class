@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/bootstrap.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <title>E-class | Dashboard</title>
-</head>
+<?php
+    include 'DecoupFiles/head.php';
+?>
 <body class="dash">
     <div class="container-fluid">
         <div class="row flex-nowrap">
@@ -31,7 +23,7 @@
                     </div>
                     <ul class="nav nav-pills flex-column w-100 ps-sm-3 pe-sm-2 mt-5 mt-sm-0 align-items-center text-center text-sm-start align-items-sm-start" id="menu">
                         <li class="nav-item mb-2 w-100 rounded-1">
-                            <a href="./dashboard.html" class="nav-link align-middle px-0 text-dark fs-9 active ps-sm-4 py-2 rounded-1">
+                            <a href="./dashboard.html" class="nav-link align-middle px-0 text-dark fs-9 ps-sm-4 py-2 rounded-1">
                                 <i  class="fal fa-home-lg-alt h6 fw-normal"></i> <span class="ms-2 d-none d-sm-inline">Home</span>
                             </a>
                         </li>
@@ -46,7 +38,7 @@
                             </a>
                         </li>
                         <li class="nav-item mb-2 w-100 rounded-1">
-                            <a href="./Payments.html" class="nav-link align-middle text-dark fs-9 ps-sm-4 py-2 rounded-1">
+                            <a href="./Payments.html" class="nav-link align-middle text-dark fs-9 active ps-sm-4 py-2 rounded-1">
                                 <i  class="fal fa-usd-square h6 fw-normal"></i> <span class="ms-3 d-none d-sm-inline">Payment</span>
                             </a>
                         </li>
@@ -68,42 +60,79 @@
                     </div>
                 </div>
             </div>
-            <div class="col bg-main">
+            <div class="col bg-main vh-100 w-80">
                 <nav class="nav-bar d-flex justify-content-between align-items-center p-2 pe-4 pe-sm-5 bg-white">
-                    <button class="bg-white border-0"> <i class="fal fa-caret-circle-down fa-rotate-90 text-muted fw-light"></i></button>
+                    <button class="bg-white border-0"> <i class="fal fa-caret-circle-down fa-rotate-90 text-mutedx fw-light "></i></button>
                     <div class="d-flex align-items-center gap-3">
                         <div class="input-group border rounded-2 p-1">
                             <div class="form-outline">
-                            <input type="search" id="form1" class="ps-2 form-control border-0 d-none d-sm-inline" placeholder="Search" />
+                            <input type="search" id="form1" class="ps-2 form-control border-0 d-none d-sm-inline" placeholder="search" />
                             </div>
                             <button type="button" class="border-0 bg-white px-1 pb-sm-1">
-                            <i class="fas fa-search text-muted fw-light"></i>
+                            <i class="fas fa-search text-muted fw-light "></i>
                             </button>
                         </div>
                         <button class="bg-white border-0"><i class="fas fa-bell ms-1 ms-sm-4 text-muted fw-light"></i></button>
                     </div>
                 </nav>
-                <div class="d-flex justify-content-between flex-wrap px-8 py-4 flex-sm-nowrap">
-                    <div class="bg-1 w-sm-25 w-100 p-3 mt-2 mt-sm-0 ms-0 rounded-3">
-                        <i class="far fa-graduation-cap h3 text-1 fw-light"></i>
-                        <p class="fs-9 text-muted mt-2">Students</p>
-                        <h3 class="text-end fw-bold mt-sm-3">234</h3> 
+                <div class=" px-8">
+                    <div class="d-flex justify-content-between align-items-center py-3">
+                        <h4 class="fw-bold">Students List</h4>
+                        <i class="far fa-sort text-primary"></i>
                     </div>
-                    <div class="bg-2 w-sm-25 w-100 p-3 mt-2 mt-sm-0 ms-0 ms-sm-3 rounded-3">
-                        <i class="fal fa-bookmark h3 text-2"></i>
-                        <p class="fs-9 text-muted mt-2">Course</p>
-                        <h3 class="text-end fw-bold mt-sm-3">13</h3>
-                    </div>
-                    <div class="bg-3 w-25 w-100 p-3 mt-2 mt-sm-0 ms-0 ms-sm-3 rounded-3">
-                        <i class="fal fa-usd-square h3 text-primary"></i>
-                        <p class="fs-9 text-muted mt-2">Payments</p>
-                        <h3 class="text-end fw-bold mt-sm-3"><span class="h6 fw-bold">DHS </span>556,000</h3>
-                    </div>
-                    <div class="bg-primary w-25 w-100 p-3 mt-2 mt-sm-0 ms-0 ms-sm-3 rounded-3">
-                        <i class="fas fa-user h3 fw-light text-white"></i>
-                        <p class="fs-9 text-white mt-2">Users</p>
-                        <h3 class="text-end fw-bold mt-sm-3">3</h3>
-                    </div>
+                </div>
+                <div class=" px-8 height_table table-responsive">
+                    <table class="table table_students table-borderless border-top border-2 ">
+                        <thead>
+                          <tr class="rounded-3 text-table fs-12">
+                            <th class="p-8">Name</th>
+                            <th class="p-8">Payment Scheduele</th>
+                            <th class="p-8">Bill Number</th>
+                            <th class="p-8">Amount Paid</th>
+                            <th class="p-8">Balance amount</th>
+                            <th class="p-8">Date</th>
+                            <th class="invisible p-8">icon</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="bg-white align-middle">
+                            <td class="p-8">Karthi</td>
+                            <td class="p-8">First</td>
+                            <td class="p-8 ">00012223</td>
+                            <td class="p-8">DHS 100,000</td>
+                            <td class="p-8">DHS 500,000</td>
+                            <td class="p-8">05-Jan,2022</td>
+                            <td class="p-8"><i class="fas fa-eye text-primary fw-light"></i></td>
+                          </tr>
+                          <tr class=" align-middle">
+                            <td class="p-8">Karthi</td>
+                            <td class="p-8">First</td>
+                            <td class="p-8 ">00012223</td>
+                            <td class="p-8">DHS 100,000</td>
+                            <td class="p-8">DHS 500,000</td>
+                            <td class="p-8">05-Jan,2022</td>
+                            <td class="p-8"><i class="fas fa-eye text-primary fw-light"></i></td>
+                          </tr>
+                          <tr class="bg-white align-middle">
+                            <td class="p-8">Karthi</td>
+                            <td class="p-8">First</td>
+                            <td class="p-8 ">00012223</td>
+                            <td class="p-8">DHS 100,000</td>
+                            <td class="p-8">DHS 500,000</td>
+                            <td class="p-8">05-Jan,2022</td>
+                            <td class="p-8"><i class="fas fa-eye text-primary fw-light"></i></td>
+                          </tr>
+                          <tr class="align-middle">
+                            <td class="p-8">Karthi</td>
+                            <td class="p-8">First</td>
+                            <td class="p-8 ">00012223</td>
+                            <td class="p-8">DHS 100,000</td>
+                            <td class="p-8">DHS 500,000</td>
+                            <td class="p-8">05-Jan,2022</td>
+                            <td class="p-8"><i class="fas fa-eye text-primary fw-light"></i></td>
+                          </tr>
+                        </tbody>
+                      </table>
                 </div>
             </div>
         </div>
