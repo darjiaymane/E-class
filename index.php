@@ -1,5 +1,5 @@
 <?php
-    include 'DecoupFiles.php';
+    include './DecoupFiles/head.php';
 ?>
 
 <body class="bg-primary index">
@@ -7,10 +7,10 @@
         <section
             class=" sm rounded-3 pt-5 pb-5 ps-4 pe-4 w-35 bg-white text-dark d-flex flex-column align-items-center">
 
-            <form action="./dashboard.html" class="w-100">
+            <form action="./dashboard.php" class="w-100">
                 <div class="text-start w-100 border-start ms-5 mb-5">
                     <h2 class="fw-bold  ms-2">
-                        E-classe
+                        E-classe hhhhhhhhh
                     </h2>
                 </div>
                 <div class="text-center mb-5">
