@@ -51,5 +51,6 @@
             </div>
         </div>
     </div>
-</body>
-</html>
+<?php
+    include 'DecoupFiles/footer.php';
+?>

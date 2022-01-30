@@ -34,6 +34,6 @@
             </div>
         </section>
     </main>
-</body>
-
-</html>
+<?php
+    include 'DecoupFiles/footer.php';
+?>
