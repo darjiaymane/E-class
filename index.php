@@ -10,7 +10,7 @@
             <form action="./dashboard.php" class="w-100">
                 <div class="text-start w-100 border-start ms-5 mb-5">
                     <h2 class="fw-bold  ms-2">
-                        E-classe hhhhhhhhh
+                        E-classe
                     </h2>
                 </div>
                 <div class="text-center mb-5">
@@ -23,8 +23,7 @@
                 </div>
                 <div class="mb-4 pb-2">
                     <label for="exampleInputPassword1" class="form-label mb-2 text-muted">Password</label>
-                    <input type="password" class="form-control p-2 border-light" placeholder="Enter your password"
-                        id="exampleInputPassword1">
+                    <input type="password" class="form-control p-2 border-light" placeholder="Enter your password" id="exampleInputPassword1">
                 </div>
                 <div class="text-center mb-3">
                     <button type="submit" class="btn btn-primary w-100 p-2">SIGN IN</button>
