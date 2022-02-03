@@ -2,12 +2,8 @@
     include 'DecoupFiles/head.php';
     include 'DecoupFiles/sideBar.php';
     include 'DecoupFiles/navBar.php';
-    $studentList = [
-        ["name" => "Karthi", "Payment Scheduele" => "First", "Bill Number" => "00012223", "Amount Paid" => "DHS 100,000", "Balance amount" => "DHS 500,000", "Date" => "05-Jan,2022"],
-        ["name" => "Haytem", "Payment Scheduele" => "Second", "Bill Number" => "00012224", "Amount Paid" => "DHS 200,000", "Balance amount" => "DHS 600,000", "Date" => "05-Jan,2022"],
-        ["name" => "Youssef", "Payment Scheduele" => "Third", "Bill Number" => "00012225", "Amount Paid" => "DHS 300,000", "Balance amount" => "DHS 700,000", "Date" => "05-Jan,2022"],
-        ["name" => "Yasser", "Payment Scheduele" => "Forth", "Bill Number" => "00012226", "Amount Paid" => "DHS 400,000", "Balance amount" => "DHS 800,000", "Date" => "05-Jan,2022"]
-    ];
+    $json = file_get_contents("jsonFiles/payment.json");
+    $data = json_decode($json, true);
 ?>
             
                 <div class=" px-8">
@@ -33,14 +29,14 @@
                         <tbody>
                             
                                 
-                        <?php foreach($studentList as $value): ?>
+                        <?php foreach($data as $student): ?>
                             <tr class="bg-white align-middle">
-                            <td class="p-8"><?php echo $value["name"] ?></td>
-                            <td class="p-8"><?php echo $value["Payment Scheduele"] ?></td>
-                            <td class="p-8"><?php echo $value["Bill Number"] ?></td>
-                            <td class="p-8"><?php echo $value["Amount Paid"] ?></td>
-                            <td class="p-8"><?php echo $value["Balance amount"] ?></td>
-                            <td class="p-8"><?php echo $value["Date"] ?></td>
+                            <td class="p-8"><?php echo $student["name"] ?></td>
+                            <td class="p-8"><?php echo $student["Payment Scheduele"] ?></td>
+                            <td class="p-8"><?php echo $student["Bill Number"] ?></td>
+                            <td class="p-8"><?php echo $student["Amount Paid"] ?></td>
+                            <td class="p-8"><?php echo $student["Balance amount"] ?></td>
+                            <td class="p-8"><?php echo $student["Date"] ?></td>
                             <td class="p-8"><i class="fas fa-eye text-primary fw-light"></i></td>
                           </tr>
                         <?php endforeach; ?>

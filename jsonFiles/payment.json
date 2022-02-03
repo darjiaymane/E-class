@@ -1,0 +1,7 @@
+
+[
+        {"name" : "Karthi", "Payment Scheduele" : "First", "Bill Number" : "00012223", "Amount Paid" : "DHS 100,000", "Balance amount" : "DHS 500,000", "Date" : "05-Jan,2022"},
+        {"name" : "Haytem", "Payment Scheduele" : "Second", "Bill Number" : "00012224", "Amount Paid" : "DHS 200,000", "Balance amount" : "DHS 600,000", "Date" : "05-Jan,2022"},
+        {"name" : "Youssef", "Payment Scheduele" : "Third", "Bill Number" : "00012225", "Amount Paid" : "DHS 300,000", "Balance amount" : "DHS 700,000", "Date" : "05-Jan,2022"},
+        {"name" : "Yasser", "Payment Scheduele" : "Forth", "Bill Number" : "00012226", "Amount Paid" : "DHS 400,000", "Balance amount" : "DHS 800,000", "Date" : "05-Jan,2022"}
+]
