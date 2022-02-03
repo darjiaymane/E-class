@@ -2,20 +2,8 @@
     include 'DecoupFiles/head.php';
     include 'DecoupFiles/sideBar.php';
     include 'DecoupFiles/navBar.php';
-    $studentList = [
-        ["profilPic"=>"./assets/avatar.svg","name" => "Karthi", "Email" => "Karthi12@email.com", "Phone" => "7305477760", "Enroll Number" => "1234567305477760", "Date of admission" => "05-Jan,2022"],
-        ["profilPic"=>"./assets/avatar.svg","name" => "Haytem", "Email" => "Hayetm332@email.com", "Phone" => "7305477618", "Enroll Number" => "1234567305477760", "Date of admission" => "05-Jan,2022"],
-        ["profilPic"=>"./assets/avatar.svg","name" => "Youssef", "Email" => "youssef992@email.com", "Phone" => "7162837760", "Enroll Number" => "1234567305477760", "Date of admission" => "05-Jan,2022"],
-        ["profilPic"=>"./assets/avatar.svg","name" => "Yasser", "Email" => "yasser192@email.com", "Phone" => "76243891673", "Enroll Number" => "1234567305477760", "Date of admission" => "05-Jan,2022"],
-        ["profilPic"=>"./assets/avatar.svg","name" => "Karthi", "Email" => "Karthi12@email.com", "Phone" => "7305477760", "Enroll Number" => "1234567305477760", "Date of admission" => "05-Jan,2022"],
-        ["profilPic"=>"./assets/avatar.svg","name" => "Haytem", "Email" => "Hayetm332@email.com", "Phone" => "7305477618", "Enroll Number" => "1234567305477760", "Date of admission" => "05-Jan,2022"],
-        ["profilPic"=>"./assets/avatar.svg","name" => "Youssef", "Email" => "youssef992@email.com", "Phone" => "7162837760", "Enroll Number" => "1234567305477760", "Date of admission" => "05-Jan,2022"],
-        ["profilPic"=>"./assets/avatar.svg","name" => "Yasser", "Email" => "yasser192@email.com", "Phone" => "76243891673", "Enroll Number" => "1234567305477760", "Date of admission" => "05-Jan,2022"],
-        ["profilPic"=>"./assets/avatar.svg","name" => "Karthi", "Email" => "Karthi12@email.com", "Phone" => "7305477760", "Enroll Number" => "1234567305477760", "Date of admission" => "05-Jan,2022"],
-        ["profilPic"=>"./assets/avatar.svg","name" => "Haytem", "Email" => "Hayetm332@email.com", "Phone" => "7305477618", "Enroll Number" => "1234567305477760", "Date of admission" => "05-Jan,2022"],
-        ["profilPic"=>"./assets/avatar.svg","name" => "Youssef", "Email" => "youssef992@email.com", "Phone" => "7162837760", "Enroll Number" => "1234567305477760", "Date of admission" => "05-Jan,2022"],
-        ["profilPic"=>"./assets/avatar.svg","name" => "Yasser", "Email" => "yasser192@email.com", "Phone" => "76243891673", "Enroll Number" => "1234567305477760", "Date of admission" => "05-Jan,2022"]
-    ];
+    $json = file_get_contents ("jsonFiles/students.json");
+    $data = json_decode($json, true);
 ?>
             
                 <div class=" px-8">
@@ -43,14 +31,14 @@
                           </tr>
                         </thead>
                         <tbody>
-                            <?php foreach($studentList as $value): ?>
+                            <?php foreach($data as $student): ?>
                             <tr class="bg-white align-middle">
-                                <td class="p-8"><img src="<?php echo $value["profilPic"]?>" alt="" height="50" width="50"></td>
-                                <td class="p-8"><?php echo $value["name"] ?></td>
-                                <td class="p-8"><?php echo $value["Email"] ?></td>
-                                <td class="p-8"><?php echo $value["Phone"] ?></td>
-                                <td class="p-8"><?php echo $value["Enroll Number"] ?></td>
-                                <td class="p-8"><?php echo $value["Date of admission"] ?></td>
+                                <td class="p-8"><img src="<?php echo $student["profilPic"]?>" alt="" height="50" width="50"></td>
+                                <td class="p-8"><?php echo $student["name"] ?></td>
+                                <td class="p-8"><?php echo $student["Email"] ?></td>
+                                <td class="p-8"><?php echo $student["Phone"] ?></td>
+                                <td class="p-8"><?php echo $student["Enroll Number"] ?></td>
+                                <td class="p-8"><?php echo $student["Date of admission"] ?></td>
                                 <td class="p-8"><i class="far fa-pen text-primary"></i></td>
                                 <td class="p-8"><i class="far fa-trash text-primary"></i></td>
                             </tr>
