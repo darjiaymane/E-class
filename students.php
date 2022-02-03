@@ -43,20 +43,20 @@
                           </tr>
                         </thead>
                         <tbody>
-                        <?php foreach($studentList as $value): ?>
-                          <tr class="bg-white align-middle">
-                            <td class="p-8"><img src="<?php echo $value["profilPic"]?>" alt="" height="50" width="50"></td>
-                            <td class="p-8"><?php echo $value["name"] ?></td>
-                            <td class="p-8"><?php echo $value["Email"] ?></td>
-                            <td class="p-8"><?php echo $value["Phone"] ?></td>
-                            <td class="p-8"><?php echo $value["Enroll Number"] ?></td>
-                            <td class="p-8"><?php echo $value["Date of admission"] ?></td>
-                            <td class="p-8"><i class="far fa-pen text-primary"></i></td>
-                            <td class="p-8"><i class="far fa-trash text-primary"></i></td>
-                          </tr>
-                          <?php endforeach; ?>
+                            <?php foreach($studentList as $value): ?>
+                            <tr class="bg-white align-middle">
+                                <td class="p-8"><img src="<?php echo $value["profilPic"]?>" alt="" height="50" width="50"></td>
+                                <td class="p-8"><?php echo $value["name"] ?></td>
+                                <td class="p-8"><?php echo $value["Email"] ?></td>
+                                <td class="p-8"><?php echo $value["Phone"] ?></td>
+                                <td class="p-8"><?php echo $value["Enroll Number"] ?></td>
+                                <td class="p-8"><?php echo $value["Date of admission"] ?></td>
+                                <td class="p-8"><i class="far fa-pen text-primary"></i></td>
+                                <td class="p-8"><i class="far fa-trash text-primary"></i></td>
+                            </tr>
+                            <?php endforeach; ?>
                         </tbody>
-                      </table>
+                    </table>
                 </div>
             </div>
         </div>
