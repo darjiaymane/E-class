@@ -1,9 +1,16 @@
 <?php
+    $course = "";
+    $payment = "active";
+    $report = "";
+    $settings = "";
+    $students = "";
+    $home = "";
     include 'DecoupFiles/head.php';
     include 'DecoupFiles/sideBar.php';
     include 'DecoupFiles/navBar.php';
-    $json = file_get_contents("jsonFiles/payment.json");
-    $data = json_decode($json, true);
+    // $json = file_get_contents("jsonFiles/payment.json");
+    // $data = json_decode($json, true);
+    include 'operations.php';
 ?>
             
                 <div class=" px-8">
@@ -27,16 +34,20 @@
                           </tr>
                         </thead>
                         <tbody>
+                        <?php
+                            $connect= connexion();
+                            $REQ=$connect -> query('SELECT * FROM paymentdetail');
                             
+                        ?>   
                                 
-                        <?php foreach($data as $student): ?>
-                            <tr class="bg-white align-middle">
+                        <?php foreach($REQ as $student): ?>
+                          <tr class="bg-white align-middle">
                             <td class="p-8"><?php echo $student["name"] ?></td>
-                            <td class="p-8"><?php echo $student["Payment Scheduele"] ?></td>
-                            <td class="p-8"><?php echo $student["Bill Number"] ?></td>
-                            <td class="p-8"><?php echo $student["Amount Paid"] ?></td>
-                            <td class="p-8"><?php echo $student["Balance amount"] ?></td>
-                            <td class="p-8"><?php echo $student["Date"] ?></td>
+                            <td class="p-8"><?php echo $student["PaymentScheduele"] ?></td>
+                            <td class="p-8"><?php echo $student["BillNumber"] ?></td>
+                            <td class="p-8"><?php echo $student["AmountPaid"] ?></td>
+                            <td class="p-8"><?php echo $student["BalanceAmount"] ?></td>
+                            <td class="p-8"><?php echo $student["date"] ?></td>
                             <td class="p-8"><i class="fas fa-eye text-primary fw-light"></i></td>
                           </tr>
                         <?php endforeach; ?>
