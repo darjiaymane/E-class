@@ -8,11 +8,9 @@
     include 'DecoupFiles/head.php';
     include 'DecoupFiles/sideBar.php';
     include 'DecoupFiles/navBar.php';
-    // $json = file_get_contents ("jsonFiles/students.json");
-    // $data = json_decode($json, true);
     include 'operations.php';
 ?>
-            
+              
                 <div class=" px-8">
                     <div class="d-flex justify-content-between py-3 align-items-center">
                         <h4 class="fw-bold">Students List</h4>
@@ -38,9 +36,7 @@
                           </tr>
                         </thead>
                         <?php
-                            $connect= connexion();
-                            $REQ=$connect -> query('SELECT * FROM students');
-                            
+                            $REQ= mysqli_query($conn, 'SELECT * FROM students');  
                         ?>
                         <tbody>
                             <?php foreach($REQ as $student): ?>
@@ -61,32 +57,48 @@
             </div>
         </div>
     </div>
-    <div class="modal fade w-100 vh-100" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog ">
+    
+    <div class="modal fade w-100 vh-100" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog mx-auto mt-5">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header p-2">
                     <h5 class="modal-title" id="exampleModalLabel">New message</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            <div class="modal-body">
-                <form>
-                <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">Recipient:</label>
-                    <input type="text" class="form-control" id="recipient-name">
-                </div>
-                <div class="mb-3">
-                    <label for="message-text" class="col-form-label">Message:</label>
-                    <textarea class="form-control" id="message-text"></textarea>
-                </div>
-                </form>
-            </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Send message</button>
+                <div class="modal-body">
+                    <form class="p-3" method="POST" action="./students/add.php">
+                        <div class="mb-3">
+                            <label class="col-form-label">Name</label>
+                            <input class="form-control p-2" name="Name" require></input>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">Email</label>
+                            <input class="form-control p-2" name="Email" require></input>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">Phone</label>
+                            <input class="form-control p-2" name="Phone" require></input>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">Enroll Number:</label>
+                            <input class="form-control p-2" name="EnrollNumber" require></input>
+                        </div>
+                        <div class="mb-3">
+                            <label class="col-form-label">Date Of Admission</label>
+                            <input class="form-control p-2" type="date" name="DateOfAdmission" require></input>
+                        </div>
+                        <div class="modal-footer py-2">
+                            <button type="button" class="btn btn-secondary px-4 py-2 me-2"
+                                data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary px-4 py-2 me-2" name="submit">Add Student</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+    
 <?php
     include 'DecoupFiles/footer.php';
 ?>
