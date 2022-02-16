@@ -1,4 +1,11 @@
 <?php
+    $course = "";
+    $payment = "";
+    $report = "";
+    $settings = "";
+    $students = "";
+    $home = "active";
+    $path="";
     include 'DecoupFiles/head.php';
     include 'DecoupFiles/sideBar.php';
     include 'DecoupFiles/navBar.php';

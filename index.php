@@ -1,5 +1,6 @@
 <?php
     include './DecoupFiles/head.php';
+    $path="";
 ?>
 
 <body class="bg-primary index">
