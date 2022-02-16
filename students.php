@@ -5,6 +5,7 @@
     $report = "";
     $settings = "";
     $students = "active";
+    $path="";
     include 'DecoupFiles/head.php';
     include 'DecoupFiles/sideBar.php';
     include 'DecoupFiles/navBar.php';
@@ -16,8 +17,8 @@
                         <h4 class="fw-bold">Students List</h4>
                         <div class="d-flex gap-2 gap-sm-3 align-items-center">
                             <i class="far fa-sort text-primary"></i>
-                            <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal" class=" btn btn-primary d-none d-sm-inline addNew fs-9">ADD NEW STUDENTS</a>
-                            <a href="#" class="btn btn-primary d-inline d-sm-none addNew" role="button"><i class="fal fa-user-plus fw-normal h5 text-white"></i></a>
+                            <a  data-bs-toggle="modal" data-bs-target="#exampleModal" class=" btn btn-primary d-none d-sm-inline addNew fs-9">ADD NEW STUDENTS</a>
+                            <a  class="btn btn-primary d-inline d-sm-none addNew" role="button"><i class="fal fa-user-plus fw-normal h5 text-white"></i></a>
                         </div>
                     </div>
                 </div>
@@ -47,8 +48,8 @@
                                 <td class="p-8"><?php echo $student["phone"] ?></td>
                                 <td class="p-8"><?php echo $student["enrollNumber"] ?></td>
                                 <td class="p-8"><?php echo $student["dateOfAdmission"] ?></td>
-                                <td class="p-8"><a ><i class="far fa-pen text-primary"></i></a></td>
-                                <td class="p-8"><a href="operations.php?delete=<?php echo $student['id_student'];?>"><i class="far fa-trash text-primary"></i></a></td>
+                                <td class="p-8"><a href="./students/edit.php?edit=<?php echo $student['id_student'];?>"><i class="far fa-pen text-primary"></i></a></td>
+                                <td class="p-8"><a href="./students/delete.php?delete=<?php echo $student['id_student'];?>"><i class="far fa-trash text-primary"></i></a></td>
                             </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -63,30 +64,30 @@
         <div class="modal-dialog mx-auto mt-5">
             <div class="modal-content">
                 <div class="modal-header p-2">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">New Students</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form class="p-3" method="POST" action="./students/add.php">
                         <div class="mb-3">
                             <label class="col-form-label">Name</label>
-                            <input class="form-control p-2" name="Name" require></input>
+                            <input class="form-control p-2" name="Name" required="required"></input>
                         </div>
                         <div class="mb-3">
                             <label class="col-form-label">Email</label>
-                            <input class="form-control p-2" name="Email" require></input>
+                            <input class="form-control p-2" type="email" name="Email" required="required"></input>
                         </div>
                         <div class="mb-3">
                             <label class="col-form-label">Phone</label>
-                            <input class="form-control p-2" name="Phone" require></input>
+                            <input class="form-control p-2" name="Phone" required="required"></input>
                         </div>
                         <div class="mb-3">
                             <label class="col-form-label">Enroll Number:</label>
-                            <input class="form-control p-2" name="EnrollNumber" require></input>
+                            <input class="form-control p-2" type="number" name="EnrollNumber" required="required"></input>
                         </div>
                         <div class="mb-3">
                             <label class="col-form-label">Date Of Admission</label>
-                            <input class="form-control p-2" type="date" name="DateOfAdmission" require></input>
+                            <input class="form-control p-2" type="date" name="DateOfAdmission" required="required"></input>
                         </div>
                         <div class="modal-footer py-2">
                             <button type="button" class="btn btn-secondary px-4 py-2 me-2"
@@ -97,8 +98,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    
+    </div> 
 <?php
     include 'DecoupFiles/footer.php';
 ?>

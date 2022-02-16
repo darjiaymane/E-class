@@ -5,6 +5,7 @@
     $settings = "";
     $students = "";
     $home = "";
+    $path="";
     include 'DecoupFiles/head.php';
     include 'DecoupFiles/sideBar.php';
     include 'DecoupFiles/navBar.php';
