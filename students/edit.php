@@ -3,7 +3,7 @@
     include '../DecoupFiles/head.php';
     include '../operations.php';
 
-    
+
         $id=$_GET['edit'];
         if(isset($_GET['edit'])){
             $sql_edit = "SELECT * FROM students WHERE id_student=$id";
@@ -31,10 +31,8 @@
     
             $sql_update = "UPDATE students SET name ='$name', email='$email', phone= '$phone', enrollNumber='$enrollNumber', dateOfAdmission='$dateOfAdmission' WHERE id_student=$id";
             $REQ = mysqli_query($conn, $sql_update);
-            if($REQ){
-                echo "Student record is successfully inserted!";
-                header("location:../students.php");
-                
+            if($REQ){  
+                header("location:../students.php");    
             }
             else {
                 echo "something went wrong!";
@@ -86,7 +84,6 @@
         </div>
     
     <?php
-    
     include '../operations.php';
     include '../DecoupFiles/footer.php';      
     ?>

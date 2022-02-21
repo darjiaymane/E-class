@@ -36,10 +36,8 @@
                         </thead>
                         <tbody>
                         <?php
-                            $connect= connexion();
-                            $REQ=$connect -> query('SELECT * FROM paymentdetail');
-                            
-                        ?>   
+                            $REQ= mysqli_query($conn, 'SELECT * FROM paymentdetail');  
+                        ?>  
                                 
                         <?php foreach($REQ as $student): ?>
                           <tr class="bg-white align-middle">
