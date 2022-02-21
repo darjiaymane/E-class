@@ -1,5 +1,7 @@
 <?php
-
+    session_start();
+    $Fname=$_SESSION['Fname'];
+    $Lname=$_SESSION['Lname'];
     $sideBar = <<<Sidebar
     <body class="dash">
     <div class="container-fluid">
@@ -18,7 +20,7 @@
                     </div>
                     <div class="d-none d-sm-flex flex-column align-items-center ">
                         <img class="d-none d-sm-inline w-75 rounded-circle mb-4" src="./assets/youcode.png" alt="#">  
-                        <h6 class="d-none d-sm-inline fw-bold fs-11 text-center">Admin name</h6>
+                        <h6 class="d-none d-sm-inline fw-bold fs-11 text-center">$Fname $Lname</h6>
                         <h6 class=" d-none d-sm-inline text-primary fs-9"> Admin</h6>                  
                     </div>
                     <ul class="nav nav-pills flex-column w-100 ps-md-3 pe-md-2 mt-5 mt-md-0 align-items-center text-center text-md-start align-items-md-start" id="menu">
