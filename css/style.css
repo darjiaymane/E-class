@@ -106,8 +106,13 @@ input[type="email"]::placeholder, input[type="password"]::placeholder{
 .height_table{
     height: 78.8vh !important;
 }
-.height_table{
-
+.lolo{
+    width: 350px !important;
+    height: 150px !important;
+    overflow-y: scroll !important;
+}
+.lolo::-webkit-scrollbar {
+    display: none;
 }
 
 
