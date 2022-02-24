@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $Fname=$_SESSION['Fname'];
     $Lname=$_SESSION['Lname'];
     $sideBar = <<<Sidebar

@@ -1,17 +1,19 @@
 <?php
-    $course = "";
-    $payment = "active";
-    $report = "";
-    $settings = "";
-    $students = "";
-    $home = "";
-    $path="";
-    include 'DecoupFiles/head.php';
-    include 'DecoupFiles/sideBar.php';
-    include 'DecoupFiles/navBar.php';
-    // $json = file_get_contents("jsonFiles/payment.json");
-    // $data = json_decode($json, true);
-    include 'operations.php';
+    session_start();
+    if(isset($_SESSION['Fname'])){
+        $course = "";
+        $payment = "active";
+        $report = "";
+        $settings = "";
+        $students = "";
+        $home = "";
+        $path="";
+        include 'DecoupFiles/head.php';
+        include 'DecoupFiles/sideBar.php';
+        include 'DecoupFiles/navBar.php';
+        // $json = file_get_contents("jsonFiles/payment.json");
+        // $data = json_decode($json, true);
+        include 'operations.php';
 ?>
             
                 <div class=" px-8">
@@ -58,5 +60,9 @@
         </div>
     </div>
 <?php
+    }
+    else{
+        header('location:index.php');
+    }
     include 'DecoupFiles/footer.php';
 ?>

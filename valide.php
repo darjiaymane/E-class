@@ -1,12 +1,6 @@
 <?php
     session_start();
     $path="";
-    //$error1="";
-    //$error2="";
-    //$wrong_info="";//
-    //$_SESSION['error1']="";
-    //$_SESSION['error2']="";
-    //$_SESSION['wrong_info']="";
     include 'operations.php';
     function test_input($data) {
         $data = trim($data);
@@ -33,8 +27,16 @@
                 $REQ=mysqli_query($conn, $sql_valid)->fetch_array();
                 $_SESSION['Fname']=$REQ['Fname'];
                 $_SESSION['Lname']=$REQ['Lname'];
+
+                if (isset($_POST['remember'])){
+                    $_SESSION['email']=$REQ['email'];
+                    $_SESSION['password']=$REQ['password'];
+                    setcookie('email',$_SESSION['email'], time() + 86400*30);
+                    setcookie('password',$_SESSION['password'], time() + 86400*30);
+                }
                 header('location:dashboard.php');
             }
+
             else{
                 $_SESSION['wrong_info']="Email or Password is incorrect";
                 header('location:index.php');

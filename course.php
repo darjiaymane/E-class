@@ -1,15 +1,17 @@
 <?php
-    $home= "";
-    $course = "active";
-    $payment = "";
-    $report = "";
-    $settings = "";
-    $students = "";
-    $path="";
-    include 'DecoupFiles/head.php';
-    include 'DecoupFiles/sideBar.php';
-    include 'DecoupFiles/navBar.php';
-    include 'operations.php';
+    session_start();
+    if(isset($_SESSION['Fname'])){
+        $home= "";
+        $course = "active";
+        $payment = "";
+        $report = "";
+        $settings = "";
+        $students = "";
+        $path="";
+        include 'DecoupFiles/head.php';
+        include 'DecoupFiles/sideBar.php';
+        include 'DecoupFiles/navBar.php';
+        include 'operations.php';
 ?>
             <div class=" px-8">
                 <div class="d-flex justify-content-between py-3 align-items-center">
@@ -57,5 +59,9 @@
 </div>
 
 <?php
-include 'DecoupFiles/footer.php';
+    }
+    else{
+        header('location:index.php');
+    }
+    include 'DecoupFiles/footer.php';
 ?>

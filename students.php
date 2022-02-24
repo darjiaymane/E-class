@@ -1,15 +1,17 @@
 <?php
-    $home= "";
-    $course = "";
-    $payment = "";
-    $report = "";
-    $settings = "";
-    $students = "active";
-    $path="";
-    include 'DecoupFiles/head.php';
-    include 'DecoupFiles/sideBar.php';
-    include 'DecoupFiles/navBar.php';
-    include 'operations.php';
+        session_start();
+    if(isset($_SESSION['Fname'])){
+        $home= "";
+        $course = "";
+        $payment = "";
+        $report = "";
+        $settings = "";
+        $students = "active";
+        $path="";
+        include 'DecoupFiles/head.php';
+        include 'DecoupFiles/sideBar.php';
+        include 'DecoupFiles/navBar.php';
+        include 'operations.php';
 ?>
               
                 <div class=" px-8">
@@ -100,5 +102,9 @@
         </div>
     </div> 
 <?php
+    }
+    else{
+        header('location:index.php');
+    }
     include 'DecoupFiles/footer.php';
 ?>
