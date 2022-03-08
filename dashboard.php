@@ -1,6 +1,6 @@
 <?php
 session_start();
-    var_dump($_COOKIE);
+if(isset($_SESSION['Fname'])){
     $course = "";
     $payment = "";
     $report = "";
@@ -61,5 +61,9 @@ session_start();
         </div>
     </div>
 <?php
+    }
+    else{
+        header('location:index.php');
+    }
     include 'DecoupFiles/footer.php';
 ?>
