@@ -44,7 +44,7 @@
                         <?php foreach($REQ as $student): ?>
                           <tr class="bg-white align-middle">
                             <td class="p-8"><?php echo $student["name"] ?></td>
-                            <td class="p-8"><?php echo $student["PaymentScheduele"] ?></td>
+                            <td class="p-8"><?php echo $student["paymentScheduele"] ?></td>
                             <td class="p-8"><?php echo $student["BillNumber"] ?></td>
                             <td class="p-8"><?php echo $student["AmountPaid"] ?></td>
                             <td class="p-8"><?php echo $student["BalanceAmount"] ?></td>
